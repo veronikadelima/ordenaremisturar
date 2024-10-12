@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenando</title>
+    <script src="ordenando.js" type="module"></script> <!-- Arquivo de ordenação -->
+</head>
+<body>
+    
+    <h1>Ordenador de Números</h1>
+    <input type="number" id="valor" placeholder="Digite um número">
+    <button onclick="add()">Adicionar</button>
+    
+    <select id="algoritmo">
+        <option value="bubble">Bubble Sort</option>
+        <option value="selection">Selection Sort</option>
+        <option value="quick">Quick Sort</option>
+    </select>
+    
+    <button onclick="ordenar()">Ordenar</button>
+    <button onclick="misturar()">Misturar</button>
+    
+    <ul id="valores"></ul>
+
+    <!-- Importando as funções do js-base.js aqui -->
+    <script src="js-base.js" type="module"></script>
+    <script type="module">
+        import { add, ordenar, misturar } from './js-base.js';
+        import { swap, shuffle, bubble_sort, selection_sort, particionamento, quick_sort } from './ordenando.js';
+        
+        // Expondo as funções globalmente para serem acessadas pelos botões no HTML
+        window.add = add;
+        window.ordenar = ordenar;
+        window.misturar = misturar;
+    </script>
+</body>
+</html>
